@@ -1,0 +1,5 @@
+<div class="row col-sm-4 py-5">
+    <select (change)="onChange($event.target)" class="form-select">
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    </select>
+</div>

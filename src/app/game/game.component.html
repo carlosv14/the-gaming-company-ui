@@ -1,0 +1,26 @@
+<div *ngIf="game" class="card">
+    <div class="card-body">
+        <h3 class="card-title">
+            {{game.name}}
+        </h3>
+        <div class="card-text from-group">
+            Fecha de publicación:
+            <input type="date" [value]="game.publishedOn" class="form-control">
+            Autor:
+            <input type="text" [value]="game.author" class="form-control">
+            Modo de juego:
+            <input type="text" [value]="game.mode.name" class="form-control">
+            Cantidad de copias:
+            <input type="number" [value]="game.copies" class="form-control">
+        </div>
+        <br>
+       <div>
+        <button (click)="onLoan()" class="btn-primary btn col-sm-4 mx-2">
+            Prestar
+        </button>
+        <button (click)="onReturn()" class="btn-danger btn col-sm-4 mx-2">
+            Retornar
+        </button>
+       </div>
+    </div>
+</div>
