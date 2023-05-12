@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category } from '../models/category';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-category-filter',
@@ -8,13 +9,16 @@ import { Category } from '../models/category';
 })
 export class CategoryFilterComponent implements OnInit {
 
-  categories : Category[];
-  constructor() {
-    this.categories = [
-      {id: 0, name: "All"},
-      {id: 1, name:"Multi-player"},
-      {id: 2, name: "Single-player"}
-    ]
+  categories !: Category[];
+  
+  constructor(private gameService : GameService) {
+    this.gameService.getCategories()
+      .subscribe({
+        next: (data : Category[]) => {
+          this.categories = data;
+        },
+        error: err => console.log(err)
+      })
   }
 
   @Output() changed = new EventEmitter<number>();

@@ -1,9 +1,11 @@
 import { Category } from "./category";
 
 export interface Game{
+    id : number;
     name : string;
     publishedOn: Date;
     author: string;
-    mode: Category;
+    gamingModeId: Category;
     copies: number;
+    categoryId: number
 }

@@ -7,18 +7,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { GameComponent } from './game/game.component';
 import { CategoryFilterComponent } from './category-filter/category-filter.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GamesComponent } from './games/games.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    CategoryFilterComponent
+    CategoryFilterComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

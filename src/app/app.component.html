@@ -1,22 +1,3 @@
-<app-category-filter (changed)="filterByCategory($event)">
-  
-</app-category-filter>
-
-<div class="row">
-  <div (click)="onClick(game);" class="card col-sm-3 my-1 mx-4" *ngFor="let game of filteredGames">
-    <div class="card-body">
-      <h2 class="card-title">
-          {{game.name}}
-      </h2>
-    </div>
-    <div class="card-text">
-    <ul>
-      <li>
-        Copias disponibles: {{game.copies}}
-      </li>
-    </ul>
-    </div>
-  </div>
+<div class="py-4">
+  <router-outlet></router-outlet>
 </div>
-
-<app-game [game]="selectedGame"></app-game>
